@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 
 # LLMの初期化
 llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
