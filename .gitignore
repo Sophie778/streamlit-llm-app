@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# dotenv
+#  dotenv files are used to load environment variables from a file into the environment.    
+#  It is recommended to keep these files out of version control to avoid exposing sensitive data.
+.env
