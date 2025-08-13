@@ -2,9 +2,17 @@ import streamlit as st
 from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 from dotenv import load_dotenv
+import os  
 
-#load_dotenv()
+# .envファイルの読み込み（ローカル用）
+load_dotenv()
 
+# APIキーの取得（ローカル優先 → なければクラウドのSecrets）
+if "OPENAI_API_KEY" not in os.environ:
+    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+
+# LLMの初期化
+llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
 # LLMの初期化
 llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
 
